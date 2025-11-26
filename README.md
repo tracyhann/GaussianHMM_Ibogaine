@@ -12,7 +12,7 @@ This repo experimented a state analysis model using Hidden Markov Model (HMM), u
 ├── atlas
 │   ├── Schaefer2018_200Parcels_17Networks_order_FSLMNI152_1mm.nii.gz
 │   ├── Schaefer2018_200Parcels_17Networks_order_FSLMNI152_2mm.nii.gz
-│   └── schaefer2018_200parcels_17networks_order.csv
+│   └── schaefer2018_200parcels_17networks_order.csv # converted from [.txt](https://github.com/ThomasYeoLab/CBIG/blob/v0.14.3-Update_Yeo2011_Schaefer2018_labelname/stable_projects/brain_parcellation/Schaefer2018_LocalGlobal/Parcellations/MNI/Schaefer2018_200Parcels_17Networks_order.txt)
 ├── data
 │   ├── 54095s001.zip
 │   └── sub-54095s001
