@@ -4,6 +4,7 @@ This repo experimented a state analysis model using Hidden Markov Model (HMM), u
 - Concatnated the sub-54095s001_ses-V2 resting state data (2 x 6 minutes fMRI scans at resting state). Each scan has 369 T, and is registered to the MNI152 space.
 - Parcellated by Schaefer2018 200 ROIs x 17 Networks atlas. To standardize the dimensions between the template and raw data, the atlas (182, 218, 182) is sampled using nearest neighbor to the same dimensions of the fMRI (108, 128, 108).
 - 37 ROIs of the Default Mode Network (DMN) are kept for analysis.
+- .csv in atlas converted from [.txt](https://github.com/ThomasYeoLab/CBIG/blob/v0.14.3-Update_Yeo2011_Schaefer2018_labelname/stable_projects/brain_parcellation/Schaefer2018_LocalGlobal/Parcellations/MNI/Schaefer2018_200Parcels_17Networks_order.txt)
 
 
 
@@ -12,7 +13,7 @@ This repo experimented a state analysis model using Hidden Markov Model (HMM), u
 ├── atlas
 │   ├── Schaefer2018_200Parcels_17Networks_order_FSLMNI152_1mm.nii.gz
 │   ├── Schaefer2018_200Parcels_17Networks_order_FSLMNI152_2mm.nii.gz
-│   └── schaefer2018_200parcels_17networks_order.csv # converted from [.txt](https://github.com/ThomasYeoLab/CBIG/blob/v0.14.3-Update_Yeo2011_Schaefer2018_labelname/stable_projects/brain_parcellation/Schaefer2018_LocalGlobal/Parcellations/MNI/Schaefer2018_200Parcels_17Networks_order.txt)
+│   └── schaefer2018_200parcels_17networks_order.csv # converted from .txt
 ├── data
 │   ├── 54095s001.zip
 │   └── sub-54095s001
