@@ -16,7 +16,7 @@ def generate_dmn_ts(bold_img, atlas_resamp_img, dmn_idxs):
 
     ts = masker.fit_transform(bold_img)
     ts_parcels = ts.T   # shape (200, 369)
-    dts = ts_parcels[idxs].T # 1 subject T x feature (network nodes), 369, 37
+    dts = ts_parcels[dmn_idxs].T # 1 subject T x feature (network nodes), 369, 37
 
     return dts
 
@@ -62,6 +62,8 @@ for sub in sub_fmri.keys():
         dts = generate_dmn_ts(bold_img, atlas_resamp_img, idxs)
         data.append(dts)
         T_t[-1][1] += dts.shape[0]
+
+np.concat()
 
 data = np.concat(data)
 np.save('ts/data.npy', data)
