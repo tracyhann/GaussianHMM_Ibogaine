@@ -32,7 +32,7 @@ for i, row in map.iterrows():
 idxs = [order - 1 for order in dmn_map.keys()]
 
 
-ex_bold_path = 'filtreg_sm_dspk_sk_sub-54095s001_ses-V2_task-Resting1NewHB6scan_space-MNI152NLin2009cAsym_desc-preproc_bold.nii'
+ex_bold_path = 'data/sub-54095s001/filtreg_sm_dspk_sk_sub-54095s001_ses-V2_task-Resting1NewHB6scan_space-MNI152NLin2009cAsym_desc-preproc_bold.nii'
 bold_img = nib.load(ex_bold_path)
 atlas_path = 'atlas/Schaefer2018_200Parcels_17Networks_order_FSLMNI152_1mm.nii.gz'
 atlas_img = nib.load(atlas_path) # 3D: 182 x 218 x 182
