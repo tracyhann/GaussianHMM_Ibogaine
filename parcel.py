@@ -5,6 +5,9 @@ import pandas as pd
 from nilearn.maskers import NiftiLabelsMasker
 import os
 
+# Path /oak/stanford/groups/nolanw/TBI/PP_BOLD/PP_USE_IN_ANALYSIS
+os.makedirs('ts', exist_ok=True)
+
 def generate_dmn_ts(bold_img, atlas_resamp_img, dmn_idxs):
     print("resampled atlas:", atlas_resamp_img.shape)   
     print("bold:", bold_img.shape)
@@ -29,10 +32,16 @@ dmn_map = {}
 for i, row in map.iterrows():
     if 'Default' in row['network']:
         dmn_map[row['order']] = row['network']
-
+dmn_map
 idxs = [order - 1 for order in dmn_map.keys()]
+dmn_idx = {}
+for i, val in enumerate(dmn_map.values()):
+    dmn_idx[i] = val 
+pd.DataFrame.from_dict(dmn_idx, orient='index').to_csv('atlas/schaefer2018_DMNrois.csv')
+
 
 root = 'data'
+
 sub_fmri = {}
 for sub in os.listdir(root):
     if '54095s' in sub:
@@ -63,20 +72,22 @@ print('atlas_resamp_img.shape', atlas_resamp_img.shape)
 start, end = 0, 0
 data = []
 T_t = []
-
+num_sub = len(list(sub_fmri.keys()))
+i = 1
 for sub in sub_fmri.keys():
-    print('Subject: ', sub)
+    print(f'\n{i}/{num_sub}  Subject: ', sub)
     bold_paths = sub_fmri[sub]
-    T_t.append([start,end])
     for bold_path in bold_paths:
         print('Loading: ', bold_path)
         bold_img = nib.load(bold_path)
         dts = generate_dmn_ts(bold_img, atlas_resamp_img, idxs)
         data.append(dts)
-        T_t[-1][1] += dts.shape[0]
+        end += dts.shape[0]
+        T_t.append([int(start),int(end)])
+        start = end
+    i += 1
 
 data = np.concat(data)
 np.save('ts/data.npy', data)
 T_t = np.array(T_t)
 np.save('ts/T_t.npy', T_t)
-

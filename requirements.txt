@@ -1,5 +1,0 @@
-nibabel
-nilearn
-numpy
-pandas
-glhmm
