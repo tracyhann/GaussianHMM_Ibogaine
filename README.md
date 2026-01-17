@@ -21,10 +21,12 @@ This repo experimented a state analysis model using Hidden Markov Model (HMM), u
 │       ├── 54095s001_V2_task-Resting2NewHB6scan_FD_INFO.mat
 │       ├── filtreg_sm_dspk_sk_sub-54095s001_ses-V2_task-Resting1NewHB6scan_space-MNI152NLin2009cAsym_desc-preproc_bold.nii
 │       └── filtreg_sm_dspk_sk_sub-54095s001_ses-V2_task-Resting2NewHB6scan_space-MNI152NLin2009cAsym_desc-preproc_bold.nii
-├── GaussianHMM_example_in DMN\nsub-54095s001_ses-V2.ipynb - Colab.pdf
+├── retrieve_data.py
 ├── parcel.py
+├── time_by_visits.py
 ├── README.md
 └── ts
     ├── data.npy
-    └── T_t.npy
+    ├── T_t.npy
+    └── T_t_visits.pkl
 </pre>
