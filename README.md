@@ -44,7 +44,7 @@ subject    V2   V3   V4
 ## Project organization
 <pre>
 .
-├── all_sub_by_visits
+├── all_sub_by_visits   # HMM model analysis outputs
 │   ├── FO  # shaped (29, 4); Fractional Occupancy of K=4 states per subject per visit in DMN ROIs
 │   │   ├── all_sub_DMN_FO_V2.npy
 │   │   ├── all_sub_DMN_FO_V3.npy
@@ -70,12 +70,11 @@ subject    V2   V3   V4
 │   ├── ...
 │   │   ...
 ├── DMN_GaussianHMM_all_subjects.ipynb  # HMM notebook; hit 'run all' to reproduce analysis
-├── outputs
-│   ├── hmm.pkl # HMM outputs
-│   ├── state0_cov_net.html
-│   ├── state1_cov_net.html
-│   ├── state2_cov_net.html
-│   └── state3_cov_net.html
+├── hmm # HMM training outputs
+│   ├── FE.pkl
+│   ├── Gamma.pkl
+│   ├── hmm.pkl # HMM model config
+│   └── Xi.pkl
 ├── parcel.py
 ├── README.md
 └── ts  # outputs of parcel.py
@@ -97,5 +96,5 @@ subject    V2   V3   V4
 - HMM analysis. 
 - Code adopted from: https://github.com/vidaurre/glhmm/blob/main/docs/notebooks/GaussianHMM_example.ipynb
 - Hit `run all` to reproduce analysis and plots. 
-- Outputs `all_sub_by_visits/*`, `folder and all_sub_by_visits.zip`, and `hmm.pkl`.
+- Outputs model training results to `hmm/*` (`hmm.zip`) and analysis results to `all_sub_by_visits/*` (`all_sub_by_visits.zip`).
 
